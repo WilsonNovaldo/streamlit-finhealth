@@ -1,10 +1,16 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import os
 from sidebar import sidebar
 
+# Get the absolute path to the current directory
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Construct the file path to the saved model
+model_path = os.path.join(current_dir, "saved_model.pkl")
+
 # Load the saved model
-model_path = "saved_model.pkl"
 with open(model_path, "rb") as file:
     my_model = pickle.load(file)
 
