@@ -4,8 +4,9 @@ import pickle
 from sidebar import sidebar
 
 # Load the saved model
-with open("C:/Users/ASUS/Desktop/saved_model.pkl", 'rb') as f:
-    my_model = pickle.load(f)
+model_path = "saved_model.pkl"
+with open(model_path, "rb") as file:
+    my_model = pickle.load(file)
 
 # Set page configuration and increase the width of the app
 st.set_page_config(page_title="Model Prediction", layout="wide")
